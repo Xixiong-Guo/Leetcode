@@ -87,6 +87,6 @@ class Solution(object):
         """
         return sorted(points, key=lambda p: p[0]**2 + p[1]**2)[:K]
 ```
-b. Heapq 
+b. Heapq (heapq.nsmallest) 堆排序
 
 # Hard
