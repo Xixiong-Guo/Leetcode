@@ -42,6 +42,27 @@ class Solution:
             return 0
 ```
 
+## 13 [Roman to integer](https://leetcode.com/problems/roman-to-integer/)
+Input a Roman str, and output its representing integer
+
+Notes: a) 4,40,9,90 ... are IV, XL, IX, XC ....  if to determine the aggregation
+b) Use dictionary to represent keys and values
+
+```python
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        
+        map_value = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        result = 0
+        
+        for i in range(len(s)):
+            if (i > 0) and (map_value[s[i]]>map_value[s[i-1]]):
+                result = result - 2 * map_value[s[i-1]] + map_value[s[i]]
+            else:
+                result = result + map_value[s[i]]
+                
+        return result
+```
 
 ## 118. [Pascal Triangle](https://leetcode.com/problems/pascals-triangle/) <br>
 Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
