@@ -20,6 +20,28 @@ class Solution:
             dict[x] = i
 ```
 
+## 7 [Reverse integer](https://leetcode.com/problems/reverse-integer/)  <br>
+Given a 32-bit signed integer, reverse digits of an integer. <br>
+Example: Input 123, output 321 ; Input -120, output -21
+```python
+class Solution:
+    def reverse(self, x):
+        result = 0
+        a = abs(x)
+            
+        while (a != 0):
+            temp = a%10
+            result = result * 10 + temp
+            a = int(a/10)
+            
+        if x > 0 and x < 2**31-1:
+            return result
+        elif x < 0 and x > -(2**31):
+            return -result
+        else:
+            return 0
+```
+
 
 ## 118. [Pascal Triangle](https://leetcode.com/problems/pascals-triangle/) <br>
 Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
