@@ -43,6 +43,35 @@ class Solution:
 
 # Medium
 
+## 46. [Permutations](https://leetcode.com/problems/permutations/)  <br>
+Given a collection of distinct integers, return all possible permutations. <br>
+Example:
+Input: [1,2,3]
+Output:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        if len(nums)==1:
+            return [nums]
+        
+        result=[]
+        for index,num in enumerate(nums):
+            n = nums[:index]+nums[index+1:]
+            for y in self.permute(n):
+                result.append([nums[index]]+y)
+        return result
+```
+
 
 
 # Hard
