@@ -57,7 +57,6 @@ Output:
   [3,2,1]
 ]
 
-
 ```python
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
@@ -73,5 +72,21 @@ class Solution:
 ```
 
 
+## 973. [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
+
+Notes: Pythagoras theorem (Euclidean distance)  
+
+a. sorted, and pick up the top k element (in this way, other elements are all sorted, which is not required, so the computing time is wasted)
+```python
+class Solution(object):
+    def kClosest(self, points, K):
+        """
+        :type points: List[List[int]]
+        :type K: int
+        :rtype: List[List[int]]
+        """
+        return sorted(points, key=lambda p: p[0]**2 + p[1]**2)[:K]
+```
+b. Heapq 
 
 # Hard
