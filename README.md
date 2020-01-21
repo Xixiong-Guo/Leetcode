@@ -47,7 +47,7 @@ class Solution:
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. <br>
 Example: 123 True, -123 False, 20 False    <br>
 
-Notes: Same strategy as #7 to calculate reverse number ---while loop :panda_face:
+Notes: Same strategy as #7 to calculate reverse number ---while loop (% get the last digit, *10 + temp to move the digit to the left every loop, till the input becomes 0) :heart:
 ```python
 class Solution:
     def isPalindrome(self, x: int) -> bool:
