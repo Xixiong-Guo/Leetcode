@@ -89,6 +89,35 @@ class Solution:
         return result
 ```
 
+## 69. [Sqrt(x)](https://leetcode.com/problems/sqrtx/)  <br>
+
+Implement int sqrt(int x). Compute and return the square root of x, where x is guaranteed to be a non-negative integer. <br>
+
+
+Notes: Binary search (define right, left. Middle for binary search) :heart:  <br>
+
+```python
+class Solution:
+    def mySqrt(self, x: int) -> int:
+               
+        if x == 0 or x==1:
+            return x      
+        
+        left,right = 1, x//2
+        while left <= right:
+            mid = (left+right)//2
+            if mid**2 == x:
+                return mid
+            elif mid**2 < x:
+                left = mid + 1
+            elif mid**2 > x:
+                right = mid -1
+        return right
+```
+
+
+
+
 ## 118. [Pascal Triangle](https://leetcode.com/problems/pascals-triangle/) <br>
 Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 
