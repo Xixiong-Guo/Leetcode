@@ -162,6 +162,33 @@ class Solution:
 
 # Medium
 
+## 11.[Container With Most Water](https://leetcode.com/problems/container-with-most-water/) <br>
+Given n non-negative integers,(i,a_i),
+Find two lines, which together with x-axis forms a container, such that the container contains the most water. <br>
+
+Notes: 1) can't use Brute Force, as the time complexity O(n^2) is too large
+2)Two Pointer Approach, find a base(largest distance two points), and then shrink the distance and see if the height and area can be enlarged. use while ... loop
+
+```python
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height)-1
+        answer = 0
+        
+        while(left<right):
+            temp = (right-left)*min(height[left],height[right])
+            
+            if (temp>answer):
+                answer = temp
+            if (height[left]>height[right]):
+                right = right-1
+            else:
+                left+=1
+        return answer
+```
+
+
 ## 46. [Permutations](https://leetcode.com/problems/permutations/)  <br>
 Given a collection of distinct integers, return all possible permutations. <br>
 Example:
