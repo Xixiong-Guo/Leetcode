@@ -108,7 +108,31 @@ class Solution:
                     return strs[0][:i]
         return strs[0]
 ```
+## 20 [valid-parentheses](https://leetcode.com/problems/valid-parentheses/) <br>
+Given a string containing just the characters '(', ')', '{', '}', '\['and ']', determine if the input string is valid. <br>
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
 
+Notes: delete the valid parentheses till empty. Or use stack idea.
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        n = len(s)
+        if n == 0:
+            return True
+        
+        if n % 2 != 0:
+            return False
+            
+        while '()' in s or '{}' in s or '[]' in s:
+            s = s.replace('{}','').replace('()','').replace('[]','')
+        
+        if s == '':
+            return True
+        else:
+            return False
+```
 
 
 ## 69. [Sqrt(x)](https://leetcode.com/problems/sqrtx/)  <br>
