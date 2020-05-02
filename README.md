@@ -201,6 +201,14 @@ class Solution:
                 n = 0        
         return maxcount
 ```
+## 977.[Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order. [-4,-1,0,3,10], returns [0,1,9,16,100]
+
+```python
+class Solution:
+    def sortedSquares(self, A: List[int]) -> List[int]:
+        return sorted([v**2 for v in A])
+```
 
 ## 1295. [Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) <br>
 Given an array nums of integers, return how many of them contain an even number of digits. <br>
