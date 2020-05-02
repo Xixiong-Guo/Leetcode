@@ -202,6 +202,21 @@ class Solution:
         return maxcount
 ```
 
+## 1295. [Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) <br>
+Given an array nums of integers, return how many of them contain an even number of digits. <br>
+example: [555,901,482,1771], return 1, as only 1771 has four digits(even) <br>
+Notes: **len(str(num))**: transfer an integer into string, and get its length faster than the way in math (num/10) <br>
+
+```python
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        count = 0
+        for num in nums:
+            if len(str(num)) % 2 == 0:
+                count += 1
+            
+        return count
+```
 
 
 # Medium
