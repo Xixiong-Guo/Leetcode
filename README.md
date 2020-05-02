@@ -183,6 +183,26 @@ class Solution:
                 
 ```
 
+## 485. [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) <br>
+Given a binary array, find the maximum number of consecutive 1s in this array.<br>
+example: [1,0,0,1,1,0,1,1,1,0], return 3
+```python
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        maxcount = 0
+        n = 0
+        for num in nums:
+            
+            if num == 1:
+                n +=1
+                maxcount = max(n, maxcount)
+            
+            else:
+                n = 0        
+        return maxcount
+```
+
+
 
 # Medium
 
